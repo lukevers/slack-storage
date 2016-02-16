@@ -13,11 +13,11 @@ func New() Storage {
 	return Storage{}
 }
 
-func (s Storage) Get(key string) (error, string) {
-	return nil, "x"
+func (s Storage) Get(key string) (string, error) {
+	return "x", nil
 }
 
-func (s Storage) GetAll() (error, []string) {
+func (s Storage) GetAll() ([]string, error) {
 	return nil, nil
 }
 

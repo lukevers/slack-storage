@@ -5,6 +5,6 @@ import (
 	"slack"
 )
 
-func list(data *slack.Slack, args []string) (error, int, string) {
-	return nil, 200, ""
+func list(data *slack.Slack, args []string) (int, string, error) {
+	return 200, "", nil
 }

@@ -5,9 +5,15 @@ import (
 	"github.com/gin-gonic/gin"
 	"slack"
 	"errors"
+	"storage"
 )
 
+var Storage storage.Storage
+
 func Parse(c *gin.Context) {
+	s, _ := c.Get("storage")
+	Storage = s.(storage.Storage)
+
 	data := &slack.Slack{
 		Token:       c.PostForm("token"),
 		TeamId:      c.PostForm("team_id"),
@@ -29,13 +35,13 @@ func Parse(c *gin.Context) {
 	switch args[0] {
 	case "":
 		// If no info is passed, run list
-		err, code, response = list(data, args)
+		code, response, err= list(data, args)
 	case "list":
-		err, code, response = list(data, args)
+		code, response, err = list(data, args)
 	case "add":
-		err, code, response = add(data, args)
+		code, response, err = add(data, args)
 	case "remove":
-		err, code, response = remove(data, args)
+		code, response, err = remove(data, args)
 	default:
 		code = 400
 		err = errors.New("Subcommand not found")

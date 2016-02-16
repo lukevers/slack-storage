@@ -5,6 +5,7 @@ import (
 	"slack"
 )
 
-func add(data *slack.Slack, args []string) (error, int, string) {
-	return nil, 200, ""
+func add(data *slack.Slack, args []string) (int, string, error) {
+	x, err := Storage.Get("y")
+	return 200, x, err
 }

@@ -3,7 +3,7 @@ package storage
 
 type Storage interface {
 	New(...string) Storage
-	Get(string) (error, string)
-	GetAll() (error, []string)
+	Get(string) (string, error)
+	GetAll() ([]string, error)
 	Put(string, string) error
 }

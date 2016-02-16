@@ -5,6 +5,6 @@ import (
 	"slack"
 )
 
-func remove(data *slack.Slack, args []string) (error, int, string) {
-	return nil, 200, ""
+func remove(data *slack.Slack, args []string) (int, string, error) {
+	return 200, "", nil
 }

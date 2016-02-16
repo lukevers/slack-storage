@@ -7,6 +7,8 @@ import (
 
 func route() {
 	V1 := router.Group("/api/v1")
+
+	V1.Use(StorageMiddleware())
 	{
 		V1.POST("/parse", v1.Parse)
 	}
