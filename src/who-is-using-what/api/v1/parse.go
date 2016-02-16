@@ -27,6 +27,9 @@ func Parse(c *gin.Context) {
 
 	args := data.Args()
 	switch args[0] {
+	case "":
+		// If no info is passed, run list
+		err, code, response = list(data, args)
 	case "list":
 		err, code, response = list(data, args)
 	case "add":
