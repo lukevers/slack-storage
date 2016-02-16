@@ -2,9 +2,9 @@
 package v1
 
 import (
+	"errors"
 	"github.com/gin-gonic/gin"
 	"slack"
-	"errors"
 	"storage"
 )
 
@@ -28,20 +28,20 @@ func Parse(c *gin.Context) {
 	}
 
 	var code int
-	var response interface{}
+	var text string
 	var err error
 
 	args := data.Args()
 	switch args[0] {
 	case "":
 		// If no info is passed, run list
-		code, response, err= list(data, args)
+		code, text, err = list(data, args)
 	case "list":
-		code, response, err = list(data, args)
+		code, text, err = list(data, args)
 	case "add":
-		code, response, err = add(data, args)
+		code, text, err = add(data, args)
 	case "remove":
-		code, response, err = remove(data, args)
+		code, text, err = remove(data, args)
 	default:
 		code = 400
 		err = errors.New("Subcommand not found")
@@ -53,7 +53,7 @@ func Parse(c *gin.Context) {
 		})
 	} else {
 		c.JSON(code, gin.H{
-			"text": response,
+			"text": text,
 		})
 	}
 }

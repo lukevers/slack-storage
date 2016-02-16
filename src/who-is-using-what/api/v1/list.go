@@ -6,5 +6,16 @@ import (
 )
 
 func list(data *slack.Slack, args []string) (int, string, error) {
-	return 200, "", nil
+	all, err := Storage.GetAll()
+
+	if err != nil {
+		return 400, "", err
+	}
+
+	var text string
+	for key, val := range all {
+		text += key + ": " + val + "\n"
+	}
+
+	return 200, text, nil
 }
