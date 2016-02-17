@@ -2,7 +2,7 @@
 package main
 
 import (
-	"who-is-using-what/api/v1"
+	"slack-storage/api/v1"
 )
 
 func route() {
