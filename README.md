@@ -1,3 +1,3 @@
-# Who Is Using What?
+# slack-storage
 
-A simple api to power a Slack app to track who is using what.
+A simple API to interact with Slack to provide a key/value storage.
