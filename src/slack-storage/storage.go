@@ -3,11 +3,11 @@ package main
 
 import (
 	"storage"
-	"storage/memory"
+	"storage/amnesiadb"
 )
 
 var Storage storage.Storage
 
 func setStorage() {
-	Storage = memory.New()
+	Storage = amnesiadb.New()
 }
