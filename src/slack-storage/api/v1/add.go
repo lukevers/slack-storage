@@ -12,8 +12,8 @@ func add(data *slack.Slack, args []string) (int, string, error) {
 		return 400, "", errors.New("Not enough arguments to add a new item.")
 	}
 
-	key := args[1]
-	val := strings.Join(args[2:], " ")
+	key := args[0]
+	val := strings.Join(args[1:], " ")
 
 	err := Storage.Put(key, val)
 	if err != nil {

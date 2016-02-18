@@ -39,7 +39,7 @@ func Parse(c *gin.Context) {
 	case "list":
 		code, text, err = list(data, args)
 	case "add":
-		code, text, err = add(data, args)
+		code, text, err = add(data, args[1:])
 	case "remove":
 		code, text, err = remove(data, args)
 	default:
