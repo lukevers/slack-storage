@@ -34,6 +34,14 @@ You're probably going to want to use this flag.
 -production
 ```
 
+### Slack Token
+
+If you don't pass an token, anyone can use your server. Probably not the best idea.
+
+```bash
+-token SL4CKT0K3NG03SH3R3
+```
+
 ### Host
 
 The default host is `[::]` which will listen on both IPv4 and IPv6. What if you want to just listen on localhost though?

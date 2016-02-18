@@ -13,18 +13,8 @@ func Parse(c *gin.Context) {
 	s, _ := c.Get("storage")
 	Storage = s.(storage.Storage)
 
-	data := &slack.Slack{
-		Token:       c.PostForm("token"),
-		TeamId:      c.PostForm("team_id"),
-		TeamDomain:  c.PostForm("team_domain"),
-		ChannelId:   c.PostForm("channel_id"),
-		ChannelName: c.PostForm("channel_name"),
-		UserId:      c.PostForm("user_id"),
-		UserName:    c.PostForm("user_name"),
-		Command:     c.PostForm("command"),
-		Text:        c.PostForm("text"),
-		ResponseUrl: c.PostForm("response_url"),
-	}
+	idata, _ := c.Get("slack")
+	data := idata.(*slack.Slack)
 
 	var code int
 	var text string
