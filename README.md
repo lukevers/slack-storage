@@ -18,7 +18,9 @@ You need to have [Go](https://golang.org/) and [GB](https://getgb.io/) installed
 gb build all
 ```
 
-It'll create a binary inside a `bin` folder in the root of the repository. Run that.
+It'll create a binary inside a `bin` folder in the root of the repository.
+
+You're done. Run that to run it.
 
 ## What about configuring it?
 
