@@ -6,4 +6,5 @@ type Storage interface {
 	Get(string) (string, error)
 	GetAll() (map[string]string, error)
 	Put(string, string) error
+	Remove(string) error
 }

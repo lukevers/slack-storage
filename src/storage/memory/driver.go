@@ -25,6 +25,11 @@ func (s Storage) Get(key string) (string, error) {
 		return "", errors.New("There is currently no data.")
 	}
 
+	_, exists := data[key]
+	if !exists {
+		return "", errors.New("The key does not exist.")
+	}
+
 	return "", nil
 }
 
@@ -38,5 +43,15 @@ func (s Storage) GetAll() (map[string]string, error) {
 
 func (s Storage) Put(key, value string) error {
 	data[key] = value
+	return nil
+}
+
+func (s Storage) Remove(key string) error {
+	_, err := s.Get(key)
+	if err != nil {
+		return err
+	}
+
+	delete(data, key)
 	return nil
 }
