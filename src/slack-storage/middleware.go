@@ -44,6 +44,7 @@ func Authenticate() gin.HandlerFunc {
 				c.JSON(401, gin.H{
 					"text": "Unauthorized.",
 				})
+				c.Abort()
 			}
 		}
 	}
