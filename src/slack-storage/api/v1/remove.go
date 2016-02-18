@@ -2,6 +2,7 @@
 package v1
 
 import (
+	"errors"
 	"slack"
 )
 

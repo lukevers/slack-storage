@@ -2,7 +2,6 @@
 package v1
 
 import (
-	"errors"
 	"github.com/gin-gonic/gin"
 	"slack"
 	"storage"
