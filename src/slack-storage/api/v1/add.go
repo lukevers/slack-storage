@@ -3,6 +3,7 @@ package v1
 
 import (
 	"errors"
+	"fmt"
 	"slack"
 	"strings"
 )
@@ -20,5 +21,5 @@ func add(data *slack.Slack, args []string) (int, string, error) {
 		return 400, "", err
 	}
 
-	return 200, "Item added.", nil
+	return 200, fmt.Sprintf("The key %s now has the value %s.", key, val), nil
 }
