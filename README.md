@@ -36,7 +36,7 @@ You're probably going to want to use this flag.
 
 ### Slack Token
 
-If you don't pass an token, anyone can use your server. Probably not the best idea.
+If you don't pass a token, anyone can use your server. Probably not the best idea.
 
 ```bash
 -token SL4CKT0K3NG03SH3R3
