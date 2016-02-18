@@ -10,6 +10,8 @@ var Storage storage.Storage
 
 func setStorage() {
 	switch *driver {
+	default:
+		fallthrough // Default to amnesiadb
 	case "amnesiadb", "memory":
 		Storage = amnesiadb.New()
 	}
