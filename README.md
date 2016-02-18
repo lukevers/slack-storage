@@ -61,3 +61,7 @@ The default port is `7043`. Why? I always keyboard smash to pick a port when sta
 ### Storage Driver
 
 The default storage driver is amnesiadb (in-memory). If a different driver is not provided, all data will be lost on restart.
+
+Here's a list of supported drivers:
+
+1. Amnesiadb
