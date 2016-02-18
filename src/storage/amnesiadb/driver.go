@@ -16,8 +16,8 @@ type Storage struct {
 	storage.Storage
 }
 
-func New() Storage {
-	return Storage{}
+func New() (Storage, error) {
+	return Storage{}, nil
 }
 
 func (s Storage) Get(key string) (string, error) {

@@ -60,8 +60,14 @@ The default port is `7043`. Why? I always keyboard smash to pick a port when sta
 
 ### Storage Driver
 
-The default storage driver is amnesiadb (in-memory). If a different driver is not provided, all data will be lost on restart.
+#### Amnesiadb
 
-Here's a list of supported drivers:
+No configuration is needed to use amnesiadb. It is the default in-memory driver that will lose all data on restart.
 
-1. Amnesiadb
+#### Boltdb
+
+[Boltdb](https://github.com/boltdb/bolt) is an embedded key/value database in Go, which makes it a great choice for use with this. You'll have to specify both the `-driver` flag and the `-dsn` flag to get it up and running. The [DSN](https://en.wikipedia.org/wiki/Data_source_name) is a path to a database file that does not need to currently exist.
+
+```bash
+-driver boltdb -dsn /path/to/some/bolt.db
+```

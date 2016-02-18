@@ -2,6 +2,12 @@
 	"version": 0,
 	"dependencies": [
 		{
+			"importpath": "github.com/boltdb/bolt",
+			"repository": "https://github.com/boltdb/bolt",
+			"revision": "2f846c3551b76d7710f159be840d66c3d064abbe",
+			"branch": "master"
+		},
+		{
 			"importpath": "github.com/dustin/go-broadcast",
 			"repository": "https://github.com/dustin/go-broadcast",
 			"revision": "3bdf6d4a7164a50bc19d5f230e2981d87d2584f1",
