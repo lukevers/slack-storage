@@ -43,8 +43,7 @@ func Parse(c *gin.Context) {
 	case "remove":
 		code, text, err = remove(data, args)
 	default:
-		code = 400
-		err = errors.New("Subcommand not found")
+		code, text, err = add(data, args)
 	}
 
 	if err != nil {
