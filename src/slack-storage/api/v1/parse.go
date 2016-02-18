@@ -22,17 +22,14 @@ func Parse(c *gin.Context) {
 
 	args := data.Args()
 	switch args[0] {
-	case "":
-		// If no info is passed, run list
+	case "", "list":
 		code, text, err = list(data, args)
-	case "list":
-		code, text, err = list(data, args)
-	case "add":
-		code, text, err = add(data, args[1:])
-	case "remove":
+	case "remove", "rm":
 		code, text, err = remove(data, args)
 	default:
-		code, text, err = add(data, args)
+		fallthrough
+	case "add", "create", "update":
+		code, text, err = add(data, args[1:])
 	}
 
 	if err != nil {
