@@ -57,3 +57,7 @@ The default port is `7043`. Why? I always keyboard smash to pick a port when sta
 ```bash
 -port 3000
 ```
+
+### Storage Driver
+
+The default storage driver is amnesiadb (in-memory). If a different driver is not provided, all data will be lost on restart.

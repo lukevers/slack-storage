@@ -9,5 +9,8 @@ import (
 var Storage storage.Storage
 
 func setStorage() {
-	Storage = amnesiadb.New()
+	switch *driver {
+	case "amnesiadb", "memory":
+		Storage = amnesiadb.New()
+	}
 }
